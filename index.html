@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Panacea Polling site</title>
+
+    <!-- Bootstrap //////////-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries //////-->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]///////-->
+  </head>
+  <body>
+    <div class="container">
+        <h1 class="text-center">Poll-It</h1>
+    </div>
+    <br>
+    <div id="load">
+      <h1 class="text-center">Loading ...</h1>
+    </div>
+    <div class="" id="afterload" style="display: none;">
+      <div class="container" id="create">
+        <h2 class="text-center">Create a Poll</h2>
+      </div>
+      <div class="container" style="width: 30%;" id="select">
+        <!--<form onSubmit="showStuff(); return false;">-->
+        <form onSubmit="showStuff(); return false;">
+          <div class="form1">
+            <label for="no.ofOptSelect">Select number of options</label>
+            <select class="form-control" id="no.ofOptSelect">
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+
+            </select>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Next</button>
+          <hr />
+        </form>
+      <!--  <button type="submit" name="button" id="sbm" onclick="showStuff(); return false;">Submit it</button>-->
+      </div>
+
+      <div class="container" id="or">
+        <h2 class="text-center">OR</h2>
+        <br><br>
+        <h2 class="text-center">Vote in a Poll</h2>
+      </div>
+      <br>
+      <div class="container" id="exist" style="width: 30%;">
+        <form onsubmit="exists(); return false;">
+          <div class="">
+            <label for="code">Enter the code of the poll</label><br>
+            <input type="text" id="code" style="width: 80%;"><br><br>
+            <button type="submit" name="button" class="btn btn-primary">Next</button>
+          </div>
+
+        </form>
+
+      </div>
+
+      <div id="content" style="display: none;" class="text-center">
+        <form onSubmit="App.createPoll(); return false;">
+          <div class="form2">
+            <div id="opt1">
+              <label for="opt1">Option 1</label>
+              <input type="text" id="op1" value=""> <br>
+            </div>
+
+            <div id="opt2">
+              <label for="opt2">Option 2</label>
+              <input type="text" id="op2" value=""> <br>
+            </div>
+            <div id="opt3">
+              <label for="opt3">Option 3</label>
+              <input type="text" id="op3" value=""> <br>
+            </div>
+            <div id="opt4">
+              <label for="opt4">Option 4</label>
+              <input type="text" id="op4" value=""> <br>
+            </div>
+          </div>
+          <br>
+          <button type="submit" class="btn btn-primary">Create Poll</button>
+
+          <hr />
+        </form>
+      </div>
+      <div id="tablediv" style="display: none;">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Option</th>
+              <th scope="col">Votes</th>
+            </tr>
+          </thead>
+          <tbody id="table"> </tbody>
+        </table>
+      </div>
+      <div id="accountAddress_d">
+        <p id="accountAddress"></p>
+      </div>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) ///////-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed ///////-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js?newversion"></script>
+    <script src="js/Poll.js"></script>
+  </body>
+</html>
+
+
+<!--<button type="button" name="btn-sub" onclick="showStuff('answer1', 'text1', this); return false;">Submit</button>-->
